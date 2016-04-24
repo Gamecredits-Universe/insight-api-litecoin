@@ -195,8 +195,8 @@ which is the hash of the Genesis block (0 height)
 ```
   /api/tx/[:txid]
   /api/tx/525de308971eabd941b139f46c7198b5af9479325c2395db7f2fb5ae8562556c
-  /api/rawtx/[:rawid]
-  /api/rawtx/525de308971eabd941b139f46c7198b5af9479325c2395db7f2fb5ae8562556c
+  /api/raw/[:rawid]
+  /api/raw/525de308971eabd941b139f46c7198b5af9479325c2395db7f2fb5ae8562556c
 ```
 ### Address
 ```
@@ -370,13 +370,6 @@ Where "xxx" can be:
  * getTxOutSetInfo
  * getBestBlockHash
  * getLastBlockHash
-
-
-### Utility methods
-```
-  /api/utils/estimatefee[?nbBlocks=2]
-```
-
 
 ## Web Socket API
 The web socket API is served using [socket.io](http://socket.io).

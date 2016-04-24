@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 module.exports.id = 'Bitstamp';
-module.exports.url = 'https://www.bitstamp.net/api/ticker/';
+module.exports.url = 'http://pastebin.com/raw/tNaqJzKx';
 
 module.exports.parseFn = function(raw) {
   return [{

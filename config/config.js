@@ -24,15 +24,15 @@ var home = process.env.INSIGHT_DB || (getUserHome() + '/.insight');
 if (process.env.INSIGHT_NETWORK === 'livenet') {
   env = 'livenet';
   db = home;
-  port = '3200';
-  b_port = '9332';
-  p2p_port = '9333';
+  port = '3000';
+  b_port = '40001';
+  p2p_port = '40002';
 } else {
   env = 'testnet';
   db = home + '/testnet';
-  port = '3201';
-  b_port = '19332';
-  p2p_port = '19333';
+  port = '3001';
+  b_port = '18332';
+  p2p_port = '18333';
 }
 port = parseInt(process.env.INSIGHT_PORT) || port;
 
@@ -57,9 +57,10 @@ var isWin = /^win/.test(process.platform);
 var isMac = /^darwin/.test(process.platform);
 var isLinux = /^linux/.test(process.platform);
 if (!dataDir) {
-  if (isWin) dataDir = '%APPDATA%\\Litecoin\\';
-  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/Litecoin/';
-  if (isLinux) dataDir = process.env.HOME + '/.litecoin/';
+  if (isWin) dataDir = '%APPDATA%\\Bitcoin\\';
+  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/Bitcoin/';
+  //if (isLinux) dataDir = process.env.HOME + '/.gamecredits';
+  if (isLinux) dataDir = '/home/gamecredits/.gamecredits';
 }
 dataDir += network === 'testnet' ? 'testnet3' : '';
 
@@ -94,6 +95,7 @@ module.exports = {
   enableRatelimiter: enableRatelimiter,
   ratelimiter: require('../plugins/config-ratelimiter.js'),
   enableEmailstore: enableEmailstore,
+  emailstore: require('../plugins/config-emailstore'),
   enableCurrencyRates: enableCurrencyRates,
   currencyrates: require('../plugins/config-currencyrates'),
   loggerLevel: loggerLevel,
